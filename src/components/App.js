@@ -1,15 +1,13 @@
 import React from "react";
-import { initialState, reducer } from "../reducers/titleReducer";
-import TitleContext from "../contexts/TitleContext";
 
+import TitleContextProvider from "../contexts/TitleContext";
 import Title from "./Title";
 
 const App = () => {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
   return (
-    <TitleContext.Provider value={{ state, dispatch }}>
+    <TitleContextProvider>
       <Title />
-    </TitleContext.Provider>
+    </TitleContextProvider>
   );
 };
 
