@@ -1,5 +1,3 @@
-import { createContext } from "react";
-
 export const initialState = {
   title: "OLD TITLE"
 };
@@ -20,6 +18,3 @@ export const reducer = (state, action) => {
       return state;
   }
 };
-
-// This should be somewhere else but I am lazy
-export default createContext();

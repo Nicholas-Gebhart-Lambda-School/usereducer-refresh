@@ -1,16 +1,15 @@
 import React from "react";
-import PostContext, { initialState, reducer } from "../reducers/postReducer";
+import { initialState, reducer } from "../reducers/titleReducer";
+import TitleContext from "../contexts/TitleContext";
 
-import PostContainer from "./PostContainer";
+import Title from "./Title";
 
 const App = () => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   return (
-    <>
-      <PostContext.Provider value={{ state, dispatch }}>
-        <PostContainer />
-      </PostContext.Provider>
-    </>
+    <TitleContext.Provider value={{ state, dispatch }}>
+      <Title />
+    </TitleContext.Provider>
   );
 };
 
