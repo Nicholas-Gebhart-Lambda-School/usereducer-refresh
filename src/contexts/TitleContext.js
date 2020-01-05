@@ -1,15 +1,16 @@
 import React, { useReducer, createContext } from "react";
-import { initialState, reducer } from "../reducers/titleReducer";
+import { titleState, titleReducer } from "../reducers/";
 
-export const TitleContext = createContext();
+export const TitleStateContext = createContext();
+export const TitleDispatchContext = createContext();
 
-const Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export const Provider = ({ children }) => {
+  const [state, dispatch] = useReducer(titleReducer, titleState);
   return (
-    <TitleContext.Provider value={{ state, dispatch }}>
-      {children}
-    </TitleContext.Provider>
+    <TitleStateContext.Provider value={state}>
+      <TitleDispatchContext.Provider value={dispatch}>
+        {children}
+      </TitleDispatchContext.Provider>
+    </TitleStateContext.Provider>
   );
 };
-
-export default Provider;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import TitleContextProvider from "../contexts/TitleContext";
+import { Provider as TitleContextProvider } from "../contexts";
 import Title from "./Title";
 
 const App = () => {
